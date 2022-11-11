@@ -1,0 +1,73 @@
+.heading_secondary {
+    grid-area: heading;
+}
+
+.link_icon_save {
+    background-image: url('/public/Star_outline.svg');
+}
+
+.link_icon_share {
+    background-image: url('/public/Share.svg');
+}
+
+@media screen and (min-width: 1280px){
+    .link_icon_save {
+        background-image: url('/public/Bookmark.svg');
+    }
+}
+
+.details__heading_container {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr 0.4fr;
+    grid-template-areas:    'heading heading'
+                            'posted salary';
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+}
+
+@media screen and (min-width: 1280px) {
+    .details__heading_container {
+        grid-template-areas: 'heading salary' 
+                             'posted posted';
+        column-gap: 6rem;
+    }
+}
+
+.details__posted {
+    grid-area: posted;
+}
+
+.details__salary {
+    grid-area: salary;
+}
+
+.contacts {
+    background-color: #2A3047;
+    border-radius: 8px;
+    margin-inline: .5rem;
+    height: 44rem;
+    max-width: 40rem;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1280px) { 
+    .contacts__content {
+        position: relative;
+        z-index: 10;
+    }
+
+    .contacts__content::before {
+        position: absolute;
+        content: '';
+        width: 27rem;
+        height: 27rem;
+        left: 0;
+        top: 0;
+        transform: translateX(-40%);
+        z-index: -1;
+        border-radius: 50%;
+        background-color: #202336;
+    }
+}

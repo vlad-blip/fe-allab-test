@@ -1,0 +1,14 @@
+.rating__icon path{
+    fill: #767F95;
+}
+
+@media screen and (min-width:1258px) {
+    .rating__icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .rating__icon path {
+        fill: #38415D;    
+    }
+}

@@ -1,0 +1,3 @@
+.icon_arrow:where(:hover, :focus) path {
+    fill: #5876C5;
+}
