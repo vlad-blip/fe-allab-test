@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/fe-allab-test/static/css/main.664b21b2.css",
-    "main.js": "/fe-allab-test/static/js/main.3afd3058.js",
+    "main.css": "/fe-allab-test/static/css/main.8c406399.css",
+    "main.js": "/fe-allab-test/static/js/main.6826931f.js",
     "static/js/787.974bb4b9.chunk.js": "/fe-allab-test/static/js/787.974bb4b9.chunk.js",
     "static/media/Star_outline.svg": "/fe-allab-test/static/media/Star_outline.147db115a0764d7622f3.svg",
     "static/media/Share.svg": "/fe-allab-test/static/media/Share.14f9ee50b9d134666b10.svg",
     "index.html": "/fe-allab-test/index.html",
     "static/media/Bookmark.svg": "/fe-allab-test/static/media/Bookmark.2aaeb9ed121c166915fe.svg",
     "static/media/Location.svg": "/fe-allab-test/static/media/Location.1c093ca173a538132f1ce31ab6296061.svg",
-    "main.664b21b2.css.map": "/fe-allab-test/static/css/main.664b21b2.css.map",
-    "main.3afd3058.js.map": "/fe-allab-test/static/js/main.3afd3058.js.map",
+    "main.8c406399.css.map": "/fe-allab-test/static/css/main.8c406399.css.map",
+    "main.6826931f.js.map": "/fe-allab-test/static/js/main.6826931f.js.map",
     "787.974bb4b9.chunk.js.map": "/fe-allab-test/static/js/787.974bb4b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.664b21b2.css",
-    "static/js/main.3afd3058.js"
+    "static/css/main.8c406399.css",
+    "static/js/main.6826931f.js"
   ]
 }
