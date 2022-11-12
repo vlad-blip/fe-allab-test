@@ -46,15 +46,15 @@ const Card: React.FC<{
           </div>
           <div className='xl:flex xl:flex-col xl:justify-between xl:items-end xl:w-max'>
             <Bookmark />
-            <p className='text-[1.4rem] text-blue-100'>{postDate}</p>
+            <p className='text-2sm text-blue-100'>{postDate}</p>
           </div>
         </div>
         <div className='flex flex-col'>
           <Link className='hover:underline' to={`jobs/${props.id}#`}>
-            <h3 className='text-blue-500 text-[1.8rem]'>{props.title}</h3>
+            <h3 className='text-blue-500 text-lg'>{props.title}</h3>
           </Link>
-          <p className='mt-2 text-[1.6rem] text-blue-100'>{props.name}</p>
-          <p className='flex gap-4 items-center mt-2 text-[1.6rem] text-blue-100'>
+          <p className='mt-2 text-base text-blue-100'>{props.name}</p>
+          <p className='flex gap-4 items-center mt-2 text-base text-blue-100'>
             <img
               src={location}
               alt="Location icon"

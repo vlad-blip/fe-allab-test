@@ -12,11 +12,18 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         'detailed': '1fr minmax(37rem, .5fr)',
+        'options': 'repeat(auto-fill, minmax(13rem, 1fr))',
+        'options-xl': 'repeat(auto-fill, minmax(22rem, 1fr))',
       }
     },
     fontSize: {
-      sm: '1.6rem',
-      base: '1.8rem',
+      sm: '1.2rem',
+      '2sm': '1.4rem',
+      base: '1.6rem',
+      lg: '1.8rem',
+      xl: '2rem',
+      '2xl': '2.4rem',
+      '3xl': '2.8rem',
     },
     colors: {
       transparent: 'transparent',
