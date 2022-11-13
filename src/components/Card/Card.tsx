@@ -1,7 +1,8 @@
-import IconRating from "../IconRating/IconRating";
+import { Link } from "react-router-dom";
+
+import Rating from "../Rating/Rating";
 import Bookmark from "../Bookmark/Bookmark";
 import location from "./Location.svg";
-import { Link } from "react-router-dom";
 
 const Card: React.FC<{
   id: string;
@@ -34,16 +35,13 @@ const Card: React.FC<{
 
   return (
     <div className='flex p-8 rounded-xl bg-white-300 xl:bg-white shadow'>
-      <img className='w-28 h-28 rounded-full flex-shrink-0 object-cover mr-8 mt-16 xl:mt-0 xl:mr-10' src={props.pictures[0]} />
+      <img 
+        className='w-28 h-28 rounded-full flex-shrink-0 object-cover mr-8 mt-16 xl:mt-0 xl:mr-10' 
+        src={props.pictures[0]}
+        alt="Organization" />
       <div className='w-full xl:flex xl:flex-row-reverse xl:justify-between'>
         <div className='flex justify-between mb-6 xl:mb-0'>
-          <div className='flex items-center gap-px xl:mx-10'>
-            <IconRating />
-            <IconRating />
-            <IconRating />
-            <IconRating />
-            <IconRating />
-          </div>
+          <Rating number={5} />
           <div className='xl:flex xl:flex-col xl:justify-between xl:items-end xl:w-max'>
             <Bookmark />
             <p className='text-2sm text-blue-100'>{postDate}</p>

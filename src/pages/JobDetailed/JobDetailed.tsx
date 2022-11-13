@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Map from "../../components/Map/Map";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import Map from "../../components/Map/Map";
 import { ArrowLeftThin } from "../../components/Arrows/Arrows";
 import location from "./Location.svg";
 import Options from "../../components/Options/Options";
@@ -28,14 +29,16 @@ interface Job {
 }
 
 const JobDetailed = () => {
-  const [jobs, setJobs] = useState([]);
+  const [, setJobs] = useState([]);
   const [job, setJob] = useState<Job>();
   const { id } = useParams();
 
-  const getJob = (jobs: []) => {
+  const getJob = useCallback(
+    (jobs: []) => {
     const parsedJobs = jobs.filter((job: Job) => job.id === id);
     setJob(parsedJobs[0]);
-  };
+  },[id]
+  );
 
   const getPostedDate = (date: string) => {
     const oneDay = 1000 * 60 * 60 * 24;
@@ -81,7 +84,7 @@ const JobDetailed = () => {
         getJob(jobs);
       })
       .catch((error) => alert(error));
-  }, []);
+  }, [getJob]);
 
   if (job) {
     const description = parseStr(job.description);
@@ -97,32 +100,29 @@ const JobDetailed = () => {
                     Job Details
                   </h1>
                   <div>
-                    <a
+                    <button
                       className="text-base text-blue relative inline-flex gap-4 items-center"
-                      href="#"
                     >
                       <span
                         className={`inline-block w-8 xl:w-12 h-8 xl:h-12 bg-no-repeat bg-center ${styles.link_icon_save}`}
                       ></span>
                       Save to my list
-                    </a>
-                    <a
+                    </button>
+                    <button
                       className="ml-8 text-base text-blue relative inline-flex gap-4 items-center"
-                      href="#"
                     >
                       <span
                         className={`inline-block w-8 xl:w-12 h-8 xl:h-12 bg-no-repeat bg-center ${styles.link_icon_share}`}
                       ></span>
                       Share
-                    </a>
+                    </button>
                   </div>
                 </div>
-                <a
+                <button
                   className="hidden xl:block text-sm font-semibold px-12 py-7 uppercase text-white bg-blue w-max rounded-xl hover:bg-blue-400 xl:mt-16 mx-auto xl:mx-0"
-                  href="#"
                 >
                   Apply now
-                </a>
+                </button>
               </div>
               <div className={styles.details__heading_container}>
                 <h2
@@ -163,12 +163,11 @@ const JobDetailed = () => {
                   {description.content[2]}
                 </p>
               </div>
-              <a
+              <button
                 className="block text-sm font-semibold px-12 py-7 uppercase text-white bg-blue w-max rounded-xl hover:bg-blue-400 xl:mt-16 mx-auto xl:mx-0"
-                href="#"
               >
                 Apply now
-              </a>
+              </button>
               <div className="mt-52 xl:mt-36 mb-24 flex flex-col xl:flex-col-reverse gap-24 xl:gap-36">
                 <div>
                   <h1 className="text-3xl font-bold text-blue pb-4 mb-8 border-b border-blue-800 xl:pb-0">
@@ -181,6 +180,7 @@ const JobDetailed = () => {
                           key={index}
                           className="rounded-xl object-cover"
                           src={picture}
+                          alt="Attached"
                         />
                       );
                     })}

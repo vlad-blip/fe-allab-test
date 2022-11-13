@@ -5,7 +5,6 @@ import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Layout from './components/Layout';
 
 import './App.css';
-import React from 'react';
 
 function App() {
   return (
